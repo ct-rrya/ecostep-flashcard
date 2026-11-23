@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ecostep-defense-flashcards
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production

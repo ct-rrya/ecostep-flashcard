@@ -1,0 +1,1015 @@
+{
+  "decks": [
+    {
+      "id": "gaps-scope",
+      "order": 1,
+      "title": "1. Research Gaps, Problem & Scope",
+      "shortTitle": "Gaps & Scope",
+      "subtitle": "Rationale, 4 literature gaps, SOP 1–6, hypotheses, cost & risks",
+      "color": "#059669"
+    },
+    {
+      "id": "methodology",
+      "order": 2,
+      "title": "2. Methodology, Sampling & Stats",
+      "shortTitle": "Methodology",
+      "subtitle": "Design, 384 respondents, ISO/IEC 25010, t-test & triangulation",
+      "color": "#059669"
+    },
+    {
+      "id": "hardware",
+      "order": 3,
+      "title": "3. Hardware & IoT Layer",
+      "shortTitle": "Hardware & IoT",
+      "subtitle": "32 PZT discs, 4-stage circuit, ESP32 ADC, step logic & BLE",
+      "color": "#059669"
+    },
+    {
+      "id": "software-ai",
+      "order": 4,
+      "title": "4. Software, DB, Security & EcoGuide AI",
+      "shortTitle": "Software & AI",
+      "subtitle": "React/NestJS/MongoDB, Socket.IO, Hybrid RAG, JWT & RBAC",
+      "color": "#059669"
+    },
+    {
+      "id": "tech-findings",
+      "order": 5,
+      "title": "5. Findings: Profiles & Technical (SOP 1–2)",
+      "shortTitle": "SOP 1–2 Results",
+      "subtitle": "Respondent profiles, MAPE 8.05%/8.46%, 282.11 ms API & trigger weight",
+      "color": "#059669"
+    },
+    {
+      "id": "eval-conclusions",
+      "order": 6,
+      "title": "6. Findings: Survey, t-Tests & Conclusions",
+      "shortTitle": "SOP 3–6 & Ch.3",
+      "subtitle": "Acceptability, usefulness, t-tests, bugs fixed, conclusions & recs",
+      "color": "#059669"
+    }
+  ],
+  "cards": [
+    {
+      "id": "gap-p1",
+      "deckId": "gaps-scope",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • Title",
+      "question": "What is the exact official title, institution, and date of the EcoStep capstone study?",
+      "answer": "Title: \"Development and Evaluation of EcoStep: A Piezoelectric-Based Footstep Energy Harvesting and IoT Monitoring Platform Featuring Web Visualization.\" Conducted by 6 BSIT researchers at Cebu Technological University – Daanbantayan Campus (Barangay Agujo, Daanbantayan, Cebu), November 2026.",
+      "keyFacts": [
+        "CTU – Daanbantayan Campus",
+        "BSIT Capstone (Nov 2026)",
+        "Adviser: Mr. Kenneth Roi P. Novabos",
+        "Chair: Dr. Iris L. Gulbe"
+      ]
+    },
+    {
+      "id": "gap-p2",
+      "deckId": "gaps-scope",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • 4 Gaps",
+      "question": "What are the four (4) specific technical gaps identified in the Review of Related Literature?",
+      "answer": "1) Piezoelectric studies focus on materials/output and rarely build post-deployment real-time monitoring.\n2) IoT energy monitoring platforms assume steady sources (solar, grids, buildings), not intermittent event-driven footsteps.\n3) Smart campus dashboards monitor conventional utilities rather than integrating footstep harvesting for sustainability awareness.\n4) Lack of a unified end-to-end platform combining harvesting, IoT sensing, cloud storage, web visualization, and conversational AI.",
+      "keyFacts": [
+        "Hardware-only piezo studies",
+        "Steady-source IoT bias",
+        "Missing campus sustainability link",
+        "No unified piezo-to-cloud-to-AI platform"
+      ]
+    },
+    {
+      "id": "gap-p3",
+      "deckId": "gaps-scope",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • SOP 1–6",
+      "question": "List the six (6) Statement of the Problem (SOP) questions in exact order.",
+      "answer": "SOP 1: Profile of respondents (Public Users & System Administrators).\nSOP 2: Technical performance (2.1 accuracy, 2.2 transmission, 2.3 storage/retrieval, 2.4 presentation timeliness/accuracy, 2.5 minimum triggering weight).\nSOP 3: ISO/IEC 25010 acceptability (Functional Suitability, Performance Efficiency, Reliability, Usability, + Security for Admins).\nSOP 4: Perceived usefulness (Admin dashboard & Public web/chatbot).\nSOP 5: Significant difference in perceived usefulness above neutral (3.00).\nSOP 6: Challenges encountered & recommended improvements.",
+      "keyFacts": [
+        "SOP 1: Profiles",
+        "SOP 2: 5 Technical Metrics",
+        "SOP 3: ISO/IEC 25010",
+        "SOP 4: Usefulness",
+        "SOP 5: t-Test vs 3.00",
+        "SOP 6: Challenges/Recs"
+      ]
+    },
+    {
+      "id": "gap-p4",
+      "deckId": "gaps-scope",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • Hypotheses",
+      "question": "State the exact Null (H₀) and Alternative (H₁) hypotheses of the study.",
+      "answer": "System Administrators:\n• H₀1: Mean perceived usefulness of the Admin Web Dashboard for hardware monitoring is NOT significantly higher than the neutral midpoint (3.00).\n• H₁1: Mean perceived usefulness IS significantly higher than 3.00.\n\nPublic Users:\n• H₀2: Mean perceived helpfulness of the Public Web Monitoring & Chat Interface is NOT significantly higher than 3.00.\n• H₁2: Mean perceived helpfulness IS significantly higher than 3.00.",
+      "keyFacts": [
+        "Directional (one-tailed)",
+        "Neutral midpoint μ₀ = 3.00",
+        "α = 0.05"
+      ]
+    },
+    {
+      "id": "gap-p5",
+      "deckId": "gaps-scope",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • Cost & Risks",
+      "question": "What is the total estimated development cost of EcoStep, and what are the 7 identified project risks?",
+      "answer": "Total Estimated Cost: ₱9,350 (ESP32 ₱300; 32 PZT discs ₱1,500; rectification/storage/divider ₱50; electronic components ₱2,500; structural materials ₱1,000; dev equipment ₱1,000; printing/docs ₱3,000; open-source software/free-tier cloud = ₱0).\n\n7 Risks (Table 5): Hardware failure, network connectivity interruption, cloud service downtime, unauthorized access, sensor measurement inaccuracies, AI chatbot input/response errors, and power supply interruption.",
+      "keyFacts": [
+        "Total cost: ₱9,350",
+        "32 PZT discs: ₱1,500",
+        "Open-source stack keeps software cost ₱0",
+        "7 risks in Risk Assessment Matrix"
+      ]
+    },
+    {
+      "id": "gap-p6",
+      "deckId": "gaps-scope",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • Scope",
+      "question": "What is strictly inside vs. outside the scope of the EcoStep study?",
+      "answer": "IN SCOPE: Capturing/monitoring electrical data from the 32-disc piezoelectric prototype via ESP32, cloud storage (MongoDB Atlas), NestJS API, React Web Dashboard (Public + Admin roles), and EcoGuide AI chatbot at CTU–Daanbantayan.\n\nOUT OF SCOPE: Optimizing/redesigning/manufacturing piezo materials or mechanical structures, comparing piezo materials, commercial large-scale power feasibility, and unrestricted admin access through the public chatbot.",
+      "keyFacts": [
+        "Prototype = data source only",
+        "No material optimization",
+        "No commercial power plant claim"
+      ]
+    },
+    {
+      "id": "def-q1",
+      "deckId": "gaps-scope",
+      "sourceType": "defense",
+      "tag": "Defense Q1",
+      "question": "Why is this a BSIT capstone and not an Electrical or Computer Engineering project?",
+      "answer": "Our main contribution is the software and IT systems integration, not inventing new piezoelectric materials. We used an existing footstep-harvesting concept strictly as a data source, and built the full IoT telemetry pipeline, NestJS cloud backend, MongoDB database, React web dashboard, RBAC security, and EcoGuide AI chatbot.",
+      "keyFacts": [
+        "IT systems integration focus",
+        "Hardware is only a data source",
+        "Full cloud, web, RBAC & AI stack"
+      ]
+    },
+    {
+      "id": "def-q2",
+      "deckId": "gaps-scope",
+      "sourceType": "defense",
+      "tag": "Defense Q2",
+      "question": "What is the exact research gap? How is EcoStep different from existing piezoelectric floor tiles or standard smart-campus energy dashboards?",
+      "answer": "Existing piezoelectric studies focus mostly on hardware efficiency and material design, with little post-deployment monitoring. On the other hand, smart-campus dashboards mostly monitor stable power grids like solar or building utilities. EcoStep bridges both by providing real-time cloud monitoring, analytics, milestones, and an AI assistant specifically built for intermittent footstep energy.",
+      "keyFacts": [
+        "Bridges piezo hardware + IoT cloud monitoring",
+        "Designed for intermittent footstep energy"
+      ]
+    },
+    {
+      "id": "def-q3",
+      "deckId": "gaps-scope",
+      "sourceType": "defense",
+      "tag": "Defense Q3",
+      "question": "Piezoelectric tiles only produce milliwatts. Why build this instead of monitoring solar panels?",
+      "answer": "Solar monitoring is already heavily studied and behaves like a steady power source. Footstep energy is intermittent and event-driven, which makes it a distinct IoT monitoring challenge. On a campus, it also lets students directly see their own physical movement turn into live data, which makes sustainability education more interactive.",
+      "keyFacts": [
+        "Intermittent & event-driven IoT challenge",
+        "Interactive campus sustainability education"
+      ]
+    },
+    {
+      "id": "def-q4",
+      "deckId": "gaps-scope",
+      "sourceType": "defense",
+      "tag": "Defense Q4",
+      "question": "Your system runs an ESP32, a cloud server, MongoDB Atlas, and an LLM (EcoGuide)—all consuming more electricity than the mat generates. Doesn't that defeat \"green energy\"?",
+      "answer": "We are transparent about this in Chapter 1: EcoStep is not designed to replace grid electricity or be a net-positive power plant. Its real purpose is operational visibility, foot-traffic and energy data monitoring, and campus sustainability education. The IT stack makes otherwise invisible harvested energy measurable and understandable.",
+      "keyFacts": [
+        "Not a net-positive power plant",
+        "Purpose: operational visibility & education"
+      ]
+    },
+    {
+      "id": "def-q5",
+      "deckId": "gaps-scope",
+      "sourceType": "defense",
+      "tag": "Defense Q5",
+      "question": "Why did you limit the scope to monitoring and exclude material optimization or large-scale commercial feasibility?",
+      "answer": "Excluding material redesign and commercial power economics kept our study focused on Information Technology—specifically data acquisition, cloud management, web visualization, and software quality evaluation. Those hardware-manufacturing topics belong to electrical or materials engineering.",
+      "keyFacts": [
+        "Keeps focus on IT domain",
+        "Material redesign = EE/Materials Eng"
+      ]
+    },
+    {
+      "id": "def-q6",
+      "deckId": "gaps-scope",
+      "sourceType": "defense",
+      "tag": "Defense Q6",
+      "question": "Who actually benefits from this after you graduate? Will CTU or CODETech maintain it?",
+      "answer": "CODETech Organization and the Research Office can use the administrative dashboard for demonstrations, historical data tracking, and sustainability initiatives. Because the system uses open-source software, free-tier cloud hosting, and modular code, future BSIT students or CODETech officers can maintain or expand it with minimal cost.",
+      "keyFacts": [
+        "CODETech + Research Office",
+        "Open-source & free-tier = low maintenance cost"
+      ]
+    },
+    {
+      "id": "meth-p1",
+      "deckId": "methodology",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • Sampling",
+      "question": "What is the exact breakdown of the 384 study respondents and their sampling techniques?",
+      "answer": "Total N = 384 at CTU – Daanbantayan Campus:\n• Public Users: 364 students (94.79%) across 10 academic programs — selected via Proportionate Stratified Random Sampling (Slovin's formula, 5% margin of error).\n• System Administrators: 20 CODETech Organization members (5.21%) — selected via Total Enumeration (1 CODETech President as Super Administrator + 19 System Administrators).",
+      "keyFacts": [
+        "Total = 384",
+        "364 Public (94.79%) — Slovin 5% stratified",
+        "20 Admins (5.21%) — Total enumeration (1 Super + 19 Admin)"
+      ]
+    },
+    {
+      "id": "meth-p2",
+      "deckId": "methodology",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • Likert Scale",
+      "question": "What are the exact 5-point Likert scale mean score ranges and verbal interpretations used in EcoStep?",
+      "answer": "• 4.21 – 5.00: Strongly Agree (Very High Acceptability / Exceptionally high)\n• 3.41 – 4.20: Agree (High Acceptability / Clearly evident)\n• 2.61 – 3.40: Neither Agree nor Disagree (Neutral / Moderate)\n• 1.81 – 2.60: Disagree (Low Acceptability)\n• 1.00 – 1.80: Strongly Disagree (Very Low Acceptability)",
+      "keyFacts": [
+        "4.21–5.00 = Strongly Agree",
+        "3.41–4.20 = Agree",
+        "Neutral midpoint μ₀ = 3.00"
+      ]
+    },
+    {
+      "id": "meth-p3",
+      "deckId": "methodology",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • Instrument",
+      "question": "What are the four (4) parts of the EcoStep Structured Survey Questionnaire?",
+      "answer": "Part I – Respondent Profile (demographics, device/browser, usage, or CODETech role/features).\nPart II – ISO/IEC 25010 System Acceptability (4 traits for Public Users; 5 traits adding Security for System Administrators).\nPart III – Perceived Usefulness Evaluation (dashboard/chatbot utility, awareness, milestones, intention to use).\nPart IV – Open-Ended Challenges and Recommendations (thematic analysis).",
+      "keyFacts": [
+        "4-part instrument",
+        "Content-validated by adviser & IT/CS experts",
+        "Preceded by Pre-Deployment Verification Checklist"
+      ]
+    },
+    {
+      "id": "meth-p4",
+      "deckId": "methodology",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • Formulas",
+      "question": "Which technical and inferential statistical formulas were used for SOP 2 and SOP 5?",
+      "answer": "• SOP 2.1 Accuracy: MAPE = (1/n) Σ |Ai − Ei| / Ai × 100% (Benchmark: < 10.00%).\n• SOP 2.2 Reliability: Packet Success Rate = (Delivered / Transmitted) × 100% (Benchmark: ≥ 95.00%).\n• SOP 2.5 Trigger Weight: Gravitational Force F = m × 9.81 m/s².\n• SOP 5 Hypothesis Test: One-tailed One-Sample t-test: t = (x̄ − μ₀) / (SD / √n), μ₀ = 3.00, α = 0.05, df = n − 1.",
+      "keyFacts": [
+        "MAPE < 10%",
+        "Packet rate ≥ 95%",
+        "F = m × 9.81 m/s²",
+        "t = (x̄ − 3.00) / (SD / √n)"
+      ]
+    },
+    {
+      "id": "meth-p5",
+      "deckId": "methodology",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • Triangulation",
+      "question": "What are the three (3) linkage types used in EcoStep's Mixed-Methods Triangulation?",
+      "answer": "1) Direct Corroboration: Technical metric & survey item confirm the same quality (e.g., 282.11 ms API latency ↔ Performance Efficiency 4.30).\n2) Diagnostic Convergence: Lower survey score or open-ended bug traces to a real constraint (e.g., 15% diagnostics usage ↔ 25% reporting confusing diagnostics UI).\n3) Boundary Isolation: Physical hardware limit (15–20 kg step trigger) is separated from software quality scores so it isn't misread as a software bug.",
+      "keyFacts": [
+        "Direct Corroboration",
+        "Diagnostic Convergence",
+        "Boundary Isolation"
+      ]
+    },
+    {
+      "id": "meth-p6",
+      "deckId": "methodology",
+      "sourceType": "paper",
+      "tag": "Chapter 1 • Phases & Agile",
+      "question": "What development methodology, 8 research phases, and 2-semester prototype gates did the team follow?",
+      "answer": "Methodology: Agile Software Development across 2 semesters (12 official modules).\n• Semester 1 (Apr–Jun 2026): Title Hearing (Mar 12), Design Hearing (May 4), core React/NestJS/MongoDB build.\n• Semester 2 (Aug–Nov 2026): Prelims Proto 1 (50%, 6/12 modules), Midterms Proto 2 (70.8%, 8.5/12 + EcoGuide & N=384 survey), Finals Proto 3 (100%, 12/12 + jamovi stats & bug fixes).\n• 8 Phases: Planning → Design → Development → Integration/Verification → Deployment → User Evaluation → Statistical Analysis → Documentation.",
+      "keyFacts": [
+        "Agile SDLC",
+        "12 official modules",
+        "8 sequential research phases",
+        "jamovi used for statistical analysis"
+      ]
+    },
+    {
+      "id": "def-q7",
+      "deckId": "methodology",
+      "sourceType": "defense",
+      "tag": "Defense Q7",
+      "question": "Why did you use a developmental and descriptive-evaluative research design?",
+      "answer": "The developmental part guided us in building, integrating, and bench-testing the actual EcoStep hardware and software prototype. The descriptive-evaluative part allowed us to measure how well it worked using objective technical benchmarks and structured user surveys.",
+      "keyFacts": [
+        "Developmental = build & bench-test",
+        "Descriptive-evaluative = benchmarks & surveys"
+      ]
+    },
+    {
+      "id": "def-q8",
+      "deckId": "methodology",
+      "sourceType": "defense",
+      "tag": "Defense Q8",
+      "question": "How did you arrive at 364 Public Users and 20 System Administrators? Why stratified random sampling for students, but total enumeration for CODETech?",
+      "answer": "For Public Users, we used Slovin's formula at a 5% margin of error to get 364 students, then used proportionate stratified random sampling so all 10 academic programs were fairly represented based on their population sizes. For System Administrators, there are only 20 designated CODETech officers, so total enumeration was the most accurate approach.",
+      "keyFacts": [
+        "Slovin 5% → 364 across 10 programs",
+        "Only 20 CODETech officers → Total enumeration"
+      ]
+    },
+    {
+      "id": "def-q9",
+      "deckId": "methodology",
+      "sourceType": "defense",
+      "tag": "Defense Q9",
+      "question": "Aren't the 20 CODETech System Administrators biased because they are fellow IT students/officers from your own campus?",
+      "answer": "We acknowledged that in Chapter 2 as a methodological limitation. However, CODETech officers are the actual intended administrators of the system, and their ratings were actually stricter and lower than the Public Users' (4.05 vs. 4.29), plus they gave direct critical feedback on diagnostics, settings, and reports.",
+      "keyFacts": [
+        "Acknowledged limitation in Ch. 2",
+        "Stricter ratings: 4.05 vs 4.29",
+        "Provided critical UX feedback"
+      ]
+    },
+    {
+      "id": "def-q10",
+      "deckId": "methodology",
+      "sourceType": "defense",
+      "tag": "Defense Q10",
+      "question": "Why did you evaluate only 4 ISO/IEC 25010 characteristics for Public Users and 5 (adding Security) for System Administrators, instead of all 8?",
+      "answer": "We selected only the quality characteristics that each user group could directly observe during testing. Public Users do not log in or manage roles, so they evaluated Functional Suitability, Performance Efficiency, Reliability, and Usability. System Administrators use access codes, RBAC, and audit logs, so Security was added for them. Code-level traits like Maintainability are developer concerns, not end-user survey items.",
+      "keyFacts": [
+        "Only directly observable traits",
+        "Public = 4 traits (no login)",
+        "Admins = 5 traits (+ Security)",
+        "Code traits ≠ end-user items"
+      ]
+    },
+    {
+      "id": "def-q11",
+      "deckId": "methodology",
+      "sourceType": "defense",
+      "tag": "Defense Q11",
+      "question": "Why did you use a one-tailed one-sample t-test against the neutral midpoint (3.00) instead of an independent t-test comparing Public Users vs. System Administrators?",
+      "answer": "Our research question asked whether each group found EcoStep significantly useful above neutral—not whether students rated it higher than administrators. Also, the two groups evaluated different interfaces with different features, so comparing them directly against each other would not be an apples-to-apples test.",
+      "keyFacts": [
+        "Tests usefulness > neutral (3.00)",
+        "Groups evaluated different interfaces (not apples-to-apples)"
+      ]
+    },
+    {
+      "id": "def-q12",
+      "deckId": "methodology",
+      "sourceType": "defense",
+      "tag": "Defense Q12",
+      "question": "Why did you use Mixed-Methods Triangulation instead of Pearson correlation to link your technical metrics (SOP 2) with your survey ratings (SOP 3–4)?",
+      "answer": "Technical metrics and survey ratings have completely different units and sample structures. Technical tests come from repeated hardware and API trials (measured in %, ms, and Newtons), while survey ratings are ordinal 1-to-5 scores aggregated across people. Pairing them in a correlation test is statistically invalid, so triangulation is the right method to cross-verify them.",
+      "keyFacts": [
+        "Different units (%/ms/N vs 1–5 Likert)",
+        "Different sample structures",
+        "Correlation is statistically invalid"
+      ]
+    },
+    {
+      "id": "def-q13",
+      "deckId": "methodology",
+      "sourceType": "defense",
+      "tag": "Defense Q13",
+      "question": "How did you validate your researcher-made questionnaire before deploying it?",
+      "answer": "Before data gathering, our survey instrument went through formal content validation by our research adviser (and qualified IT/CS validators) using their standard rubric. They checked clarity, SOP alignment, and ISO/IEC 25010 coverage, and we applied their revisions before administering it.",
+      "keyFacts": [
+        "Formal content validation",
+        "Checked clarity, SOP & ISO 25010 alignment"
+      ]
+    },
+    {
+      "id": "def-q14",
+      "deckId": "methodology",
+      "sourceType": "defense",
+      "tag": "Defense Q14",
+      "question": "Where are Alpha and Beta testing in your methodology?",
+      "answer": "Alpha testing is our \"System/Alpha Testing\" phase, where our development team internally tested all 13 features and technical benchmarks in a controlled setup. Beta testing is our \"Acceptance Testing\" phase, where the actual end-users—the 364 students and 20 CODETech administrators—evaluated the live deployed system on campus.",
+      "keyFacts": [
+        "Alpha = internal System/Alpha testing",
+        "Beta = live Acceptance testing (384 users)"
+      ]
+    },
+    {
+      "id": "hw-p1",
+      "deckId": "hardware",
+      "sourceType": "paper",
+      "tag": "Hardware • 4 Stages",
+      "question": "Summarize the exact components in each of the 4 stages of the EcoStep Electrical Schematic (Fig. 16).",
+      "answer": "• Stage 1 (Generation & Rectification): 32 PZT piezo discs (PZ1–PZ32), each with its own full-wave Schottky bridge rectifier (BR1–BR32, four 1N5819 diodes each) summed onto V_RAW.\n• Stage 2 (Storage & Isolation): 2200 µF, 25 V electrolytic capacitor (C1) + 1N5819 blocking diode (D1) feeding V_DIV.\n• Stage 3 (Conditioning & Protection): 1 MΩ (R1) + 680 kΩ (R2) voltage divider (2.47:1 ratio) → ADC_SENSE, 100 nF ceramic noise-filter cap (C2), 3.3 V Zener diode (ZD1).\n• Stage 4 (MCU & Indicator): ESP32-WROOM-32 sampling GPIO34 (ADC1_CH6, 12-bit, 100-sample avg) + GPIO25 driving status LED1 via 220 Ω resistor (R3).",
+      "keyFacts": [
+        "32 PZT + 32 1N5819 bridges",
+        "2200 µF cap + D1 diode",
+        "1 MΩ/680 kΩ (2.47:1) + 100 nF + 3.3V Zener",
+        "ESP32 GPIO34 (ADC) & GPIO25 (LED)"
+      ]
+    },
+    {
+      "id": "hw-p2",
+      "deckId": "hardware",
+      "sourceType": "paper",
+      "tag": "Firmware • Telemetry",
+      "question": "What are the key ESP32 firmware parameters for sampling, step detection, batch uploads, and offline buffering?",
+      "answer": "• ADC Sampling: 12-bit resolution on GPIO34 with 100-sample averaging every 150 ms.\n• Step Detection: Valid step when 15 mV < ΔV < 1.5 V, plus a 3-second cooldown to prevent double-counting.\n• Cloud Sync: NTP timestamp sync + 10-second delta batch uploads over HTTPS to Render.\n• Offline Resilience: 10-slot offline ring buffer that flushes on Wi-Fi reconnect.\n• Provisioning: 3-stage Web Bluetooth (BLE) provisioning via device name \"EcoStep-Harvester\".",
+      "keyFacts": [
+        "100-sample avg every 150 ms",
+        "15 mV < ΔV < 1.5 V + 3s cooldown",
+        "10-second batch uploads",
+        "10-slot offline ring buffer"
+      ]
+    },
+    {
+      "id": "def-q15",
+      "deckId": "hardware",
+      "sourceType": "defense",
+      "tag": "Defense Q15",
+      "question": "Why 32 PZT piezoelectric discs? Why not 16 or 64?",
+      "answer": "Thirty-two discs fit the physical surface area of our single floor mat prototype while keeping our hardware budget affordable at ₱1,500 for the discs. Fewer discs would leave dead spots where a footstep might miss a transducer, while 64 discs would double the rectification parts and wiring complexity without changing the monitoring architecture.",
+      "keyFacts": [
+        "Fits single mat surface area",
+        "Affordable: ₱1,500",
+        "16 = dead spots; 64 = double wiring"
+      ]
+    },
+    {
+      "id": "def-q16",
+      "deckId": "hardware",
+      "sourceType": "defense",
+      "tag": "Defense Q16",
+      "question": "Why does every single PZT disc have its own 1N5819 Schottky bridge rectifier instead of wiring all discs into one shared rectifier?",
+      "answer": "When someone steps on only part of the mat, the compressed discs generate voltage while the untouched discs sit idle. If they shared one rectifier, the idle discs would act as loads and drain the charge from the active ones. Individual Schottky bridges prevent backflow and minimize voltage drop.",
+      "keyFacts": [
+        "Prevents idle discs from draining active discs",
+        "Schottky 1N5819 = low forward voltage drop"
+      ]
+    },
+    {
+      "id": "def-q17",
+      "deckId": "hardware",
+      "sourceType": "defense",
+      "tag": "Defense Q17",
+      "question": "Walk us through the 4-stage circuit: what is the exact job of the 2200 µF cap, 1N5819 isolation diode, 1 MΩ/680 kΩ divider, 100 nF cap, and 3.3 V Zener?",
+      "answer": "Stage 1 converts each disc's AC pulse to DC. In Stage 2, the 2200 µF capacitor temporarily stores harvested charge, and the 1N5819 isolation diode prevents reverse discharge. In Stage 3, the 1 MΩ / 680 kΩ divider scales high piezo spikes down by 2.47:1 without draining the capacitor quickly, the 100 nF capacitor filters electrical noise, and the 3.3 V Zener clamps overvoltage to protect the ESP32 pin. Stage 4 is the ESP32 reading GPIO34 and blinking the step LED on GPIO25.",
+      "keyFacts": [
+        "2200 µF = charge storage",
+        "D1 = no reverse discharge",
+        "1M/680k = 2.47:1 high-Z scale",
+        "100 nF = noise filter",
+        "3.3V Zener = ESP32 pin protection"
+      ]
+    },
+    {
+      "id": "def-q18",
+      "deckId": "hardware",
+      "sourceType": "defense",
+      "tag": "Defense Q18",
+      "question": "If EcoStep harvests energy, why is the ESP32 powered by an external 5 V DC USB supply?",
+      "answer": "An ESP32 using Wi-Fi requires steady milliamps of continuous power, while occasional footsteps only produce tiny, intermittent milliwatt bursts. Powering the ESP32 via 5 V USB guarantees reliable telemetry while keeping the harvested piezoelectric energy cleanly isolated for measurement.",
+      "keyFacts": [
+        "Wi-Fi needs steady mA; footsteps = mW bursts",
+        "Isolates harvested energy for accurate sensing"
+      ]
+    },
+    {
+      "id": "def-q19",
+      "deckId": "hardware",
+      "sourceType": "defense",
+      "tag": "Defense Q19",
+      "question": "Why is electrical current derived computationally instead of measured with a dedicated current sensor (like an INA219)? Doesn't that make power readings estimates?",
+      "answer": "Yes, we explicitly document current as a derived value rather than a direct sensor reading. Piezoelectric pulses are very brief and low-current, which standard off-the-shelf shunt sensors struggle to read cleanly without distorting the circuit. We validated our derived power against a calibrated digital multimeter and achieved 8.46% MAPE, within our 10% accuracy target.",
+      "keyFacts": [
+        "Explicitly documented as derived",
+        "Shunt sensors distort tiny brief piezo pulses",
+        "Validated at 8.46% MAPE (< 10%)"
+      ]
+    },
+    {
+      "id": "def-q20",
+      "deckId": "hardware",
+      "sourceType": "defense",
+      "tag": "Defense Q20",
+      "question": "How does the ESP32 distinguish a real human footstep from ambient vibration, electrical noise, or someone tapping the mat?",
+      "answer": "The firmware takes a 100-sample average on the 12-bit ADC every 150 milliseconds to smooth out noise. It only counts a valid footstep when the voltage jump falls between 15 mV and 1.5 V, and it enforces a 3-second cooldown to prevent double-counting. In physical testing, this filtered out 1–5 kg light taps and triggered reliably at 15–20 kg.",
+      "keyFacts": [
+        "100-sample avg every 150 ms",
+        "15 mV < ΔV < 1.5 V window",
+        "3s cooldown",
+        "Rejects 1–5 kg, triggers at 15–20 kg"
+      ]
+    },
+    {
+      "id": "def-q21",
+      "deckId": "hardware",
+      "sourceType": "defense",
+      "tag": "Defense Q21",
+      "question": "What happens to the data when campus Wi-Fi drops?",
+      "answer": "The ESP32 detects the lost Wi-Fi connection and stores telemetry locally in a 10-slot offline ring buffer. As soon as Wi-Fi reconnects, the firmware automatically flushes those queued readings to the NestJS backend.",
+      "keyFacts": [
+        "10-slot offline ring buffer",
+        "Auto-flushes on Wi-Fi reconnect"
+      ]
+    },
+    {
+      "id": "def-q22",
+      "deckId": "hardware",
+      "sourceType": "defense",
+      "tag": "Defense Q22",
+      "question": "What happens if Wi-Fi is down long enough to exceed the 10-slot buffer?",
+      "answer": "Because it is a ring buffer, once all 10 slots are full, the newest reading overwrites the oldest unsent slot. That prevents the ESP32 from running out of RAM and crashing, while preserving the most recent telemetry.",
+      "keyFacts": [
+        "FIFO overwrite (newest replaces oldest)",
+        "Prevents ESP32 RAM exhaustion/crash"
+      ]
+    },
+    {
+      "id": "def-q23",
+      "deckId": "hardware",
+      "sourceType": "defense",
+      "tag": "Defense Q23",
+      "question": "Why did you use Web Bluetooth (BLE) for Wi-Fi provisioning instead of hardcoding Wi-Fi credentials or building a mobile app?",
+      "answer": "Hardcoding Wi-Fi credentials means you have to re-flash the ESP32 with a laptop every time the campus Wi-Fi password changes. Using Web Bluetooth lets an administrator connect to EcoStep-Harvester directly from Chrome or Edge to update Wi-Fi credentials without installing a separate mobile app.",
+      "keyFacts": [
+        "No re-flashing needed when Wi-Fi changes",
+        "Works directly in Chrome/Edge via BLE"
+      ]
+    },
+    {
+      "id": "sw-p1",
+      "deckId": "software-ai",
+      "sourceType": "paper",
+      "tag": "Architecture • Stack",
+      "question": "List EcoStep's complete production deployment stack, URLs, and reporting/AI libraries.",
+      "answer": "• Presentation Layer (PWA): React 19, Vite, TypeScript, Tailwind CSS, Recharts — hosted on Vercel (`ecostep.cebutech.digital`).\n• Business Logic Layer: NestJS (14 modules, Node.js, TypeScript) with REST APIs & Socket.IO — hosted on Render (`api.cebutech.digital`).\n• Data Layer: MongoDB Atlas (`ecostepdata / energy-monitoring`, 9 collections), DNS on Hostinger.\n• Reports & AI: PDFKit + ExcelJS for exports; Google Gemini with Groq Cloud failover for EcoGuide.",
+      "keyFacts": [
+        "Vercel: ecostep.cebutech.digital",
+        "Render: api.cebutech.digital",
+        "MongoDB Atlas: energy-monitoring",
+        "PDFKit, ExcelJS, Gemini + Groq"
+      ]
+    },
+    {
+      "id": "sw-p2",
+      "deckId": "software-ai",
+      "sourceType": "paper",
+      "tag": "Architecture • 5 Modules",
+      "question": "What are the five (5) top-level modules in EcoStep's Functional Decomposition Diagram (Fig. 4)?",
+      "answer": "1.0 Energy Harvesting (capture, convert, condition, store in capacitors).\n2.0 Data Acquisition & Processing (acquire readings, calculate electrical values, count steps, timestamp, batch).\n3.0 Batch Transmission & Data Management (transmit from MCU, receive at API, validate, store/retrieve in MongoDB).\n4.0 Monitoring & Analysis (live data, trends, reports, sensor status).\n5.0 User Access (Public: view/charts/EcoGuide; System Admin: dashboard/reports/diagnostics; Super Admin: admin CRUD & audit logs).",
+      "keyFacts": [
+        "1.0 Harvesting",
+        "2.0 Acquisition",
+        "3.0 Transmission & DB",
+        "4.0 Monitoring",
+        "5.0 Role-Based Access"
+      ]
+    },
+    {
+      "id": "def-q24",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q24",
+      "question": "Why did you use a three-tier architecture with a star topology? What is the single point of failure in a star topology?",
+      "answer": "A three-tier architecture separates the React UI, NestJS business logic, and MongoDB database so each layer can be built and maintained independently. Centralizing traffic in a star topology ensures all validation and security checks happen in one place. The single point of failure is the NestJS backend server, which we mitigate using uptime monitoring, error handling, and the ESP32 offline buffer.",
+      "keyFacts": [
+        "Separation of concerns (3-tier)",
+        "SPOF = NestJS backend server",
+        "Mitigated by ESP32 buffer + monitoring"
+      ]
+    },
+    {
+      "id": "def-q25",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q25",
+      "question": "Why NestJS, React 19, and MongoDB Atlas instead of a simpler stack like Laravel/PHP and MySQL?",
+      "answer": "Using TypeScript across both React and NestJS let us share consistent data types between frontend and backend and build a clean modular API. MongoDB Atlas gave us flexible document storage for evolving IoT telemetry and embedded milestone rules, plus built-in vector search for EcoGuide.",
+      "keyFacts": [
+        "End-to-end TypeScript",
+        "Flexible NoSQL schema for IoT",
+        "Built-in MongoDB Vector Search for EcoGuide"
+      ]
+    },
+    {
+      "id": "def-q26",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q26",
+      "question": "Why use both REST APIs and Socket.IO WebSockets? Why not just use one of them?",
+      "answer": "Each protocol does what it is best at. REST APIs are ideal for structured, request-response tasks like ESP32 data ingestion (returning HTTP 201 Created), authentication, historical queries, and report exports. Socket.IO is ideal for pushing live readings and alerts to the dashboard instantly without making users refresh the page.",
+      "keyFacts": [
+        "REST = ingestion, auth, history, exports",
+        "Socket.IO = instant live dashboard & alerts"
+      ]
+    },
+    {
+      "id": "def-q27",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q27",
+      "question": "Explain your database schema. Why NoSQL (MongoDB) for time-series telemetry, and how do your 9 collections relate to each other?",
+      "answer": "MongoDB handles time-series JSON telemetry cleanly and supports compound indexing for fast date-range queries. Our 9 collections connect logically through references: sensors link to energy_readings, diagnostic_tests, and alerts; diagnostic_tests compare against reference_configs; milestone_targets evaluate progress against energy_readings; and users link to generated reports, acknowledged alerts, and audit_logs.",
+      "keyFacts": [
+        "9 collections in MongoDB Atlas",
+        "Compound indexes for date-range speed",
+        "sensors ↔ readings/diagnostics/alerts; users ↔ reports/audit_logs"
+      ]
+    },
+    {
+      "id": "def-q28",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q28",
+      "question": "How do you prevent duplicate records in MongoDB if the ESP32 retries a batch transmission during unstable Wi-Fi?",
+      "answer": "The backend validates incoming payloads, checks timestamps and reading identifiers, and processes them through our ingestion validation layer before saving. We also noted in our recommendations that adding visible sync-status indicators will make this duplicate protection clearer to administrators.",
+      "keyFacts": [
+        "Backend payload, timestamp & ID validation",
+        "Sync-status UI indicator recommended in Ch. 3"
+      ]
+    },
+    {
+      "id": "def-q29",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q29",
+      "question": "Isn't a 14-module NestJS backend with Hybrid RAG (3072-dim vector search + IDF keyword search + Reciprocal Rank Fusion) overengineered for a single floor mat?",
+      "answer": "For a single prototype mat today, it is more robust than strictly necessary—and we built it that way on purpose. Our goal was to design an institutional, smart-campus-ready platform that can scale to multiple floor tiles and support accurate, non-hallucinating AI answers without needing a rewrite later.",
+      "keyFacts": [
+        "Intentionally designed for multi-tile campus scaling",
+        "Hybrid RAG prevents AI hallucinations"
+      ]
+    },
+    {
+      "id": "def-q30",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q30",
+      "question": "How does EcoGuide actually get live numbers? Does the LLM query MongoDB directly, or how does it avoid hallucinating energy figures?",
+      "answer": "The LLM never touches MongoDB directly. When a user asks a question, our ChatbotCoreService detects the intent, parses any date range using DateIntentParser, fetches real statistics from EnergyService, AnalyticsService, and MilestonesService, and injects those verified numbers plus Hybrid RAG knowledge chunks into the prompt.",
+      "keyFacts": [
+        "LLM never queries DB directly",
+        "ChatbotCoreService + DateIntentParser",
+        "Injects verified live stats + Hybrid RAG chunks"
+      ]
+    },
+    {
+      "id": "def-q31",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q31",
+      "question": "How do you stop users from tricking EcoGuide with prompt injection or asking off-topic homework questions?",
+      "answer": "We enforce strict domain-scope guardrails in ChatbotCoreService so off-topic questions are politely rejected—a fix we deployed after 23 users tested unrelated prompts during evaluation. We also wrap retrieved RAG chunks inside untrusted-data delimiters so user input cannot override system instructions, and we cap requests at 40 per minute per IP.",
+      "keyFacts": [
+        "Strict domain guardrails (fixed after 23 users)",
+        "Untrusted-data delimiters against prompt injection",
+        "Rate limit: 40 req/min per IP"
+      ]
+    },
+    {
+      "id": "def-q32",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q32",
+      "question": "What happens if Google Gemini hits its free-tier quota or goes down during a demo?",
+      "answer": "Our GeminiAIService supports multi-key rotation and classifies errors like quota exceeded, rate limit, or timeout. If Gemini fails, it automatically fails over to Groq Cloud fallback models so EcoGuide stays online.",
+      "keyFacts": [
+        "Multi-key Gemini rotation",
+        "Auto-failover to Groq Cloud"
+      ]
+    },
+    {
+      "id": "def-q33",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q33",
+      "question": "How do you protect EcoStep against SQL injection, NoSQL injection, and Cross-Site Scripting (XSS)?",
+      "answer": "Because we use MongoDB with Mongoose, SQL injection does not apply, and we prevent NoSQL injection by enforcing strict NestJS DTO validation, input sanitization, and typed Mongoose schemas so raw query operators are rejected. For XSS, React automatically escapes rendered output and we validate all inputs server-side.",
+      "keyFacts": [
+        "NoSQL injection: NestJS DTOs + typed Mongoose schemas",
+        "XSS: React auto-escaping + server validation"
+      ]
+    },
+    {
+      "id": "def-q34",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q34",
+      "question": "Why is there no login for Public Users, and why do System Administrators log in with a 12-character access code instead of email and password?",
+      "answer": "Removing login for Public Users eliminates sign-up friction so any student can immediately view campus energy data and use EcoGuide. For the 20 CODETech administrators, personal 12-character access codes provide quick, controlled dashboard entry while still uniquely identifying each officer for role permissions and audit logging.",
+      "keyFacts": [
+        "Zero-friction public access",
+        "Personal 12-char codes = quick entry + unique audit trail"
+      ]
+    },
+    {
+      "id": "def-q35",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q35",
+      "question": "How are access codes and passwords stored in MongoDB?",
+      "answer": "They are never stored in plain text. Both passwords and the 12-character access codes are hashed using bcrypt's one-way salted hashing algorithm before being saved in MongoDB Atlas. Upon login, the backend verifies the hash and issues a signed JWT access token.",
+      "keyFacts": [
+        "Never plain text",
+        "One-way salted bcrypt hashing",
+        "Issues signed JWT on login"
+      ]
+    },
+    {
+      "id": "def-q36",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q36",
+      "question": "How do you prevent a Public User or a regular System Administrator from accessing Super Administrator endpoints (like audit logs or admin creation) via Postman?",
+      "answer": "Authorization is strictly enforced on the NestJS backend using JWT verification and Role-Based Access Control (RBAC) guards—never just by hiding frontend buttons. Even if someone sends a direct Postman request, the server checks their JWT role and returns an unauthorized/forbidden response.",
+      "keyFacts": [
+        "Server-side NestJS JWT + RBAC guards",
+        "Direct Postman calls return 401/403"
+      ]
+    },
+    {
+      "id": "def-q37",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q37",
+      "question": "How does the backend know incoming telemetry on POST /api/iot/readings is really from your ESP32 and not a hacker spamming fake footsteps?",
+      "answer": "Every registered sensor node is assigned a unique X-API-Key stored in the sensors collection. Our ApiKeyGuard checks the X-API-Key header on every HTTPS POST request to /api/iot/readings and rejects any request with a missing or invalid key.",
+      "keyFacts": [
+        "Unique X-API-Key per sensor node",
+        "Validated by NestJS ApiKeyGuard"
+      ]
+    },
+    {
+      "id": "def-q38",
+      "deckId": "software-ai",
+      "sourceType": "defense",
+      "tag": "Defense Q38",
+      "question": "Why deploy on free-tier Render and Vercel when it caused cold-start delays for 34 students during evaluation?",
+      "answer": "Free-tier hosting allowed us to deploy a live, HTTPS production system on a student capstone budget without server costs. Once awake, our API responded in an average of 282.11 ms. In Chapter 3, we specifically recommended upgrading to an always-on tier or using scheduled keep-alive pings during campus hours to eliminate cold starts.",
+      "keyFacts": [
+        "Capstone budget constraint",
+        "Steady-state latency: 282.11 ms",
+        "Ch. 3 rec: always-on tier or keep-alive pings"
+      ]
+    },
+    {
+      "id": "fin1-p1",
+      "deckId": "tech-findings",
+      "sourceType": "paper",
+      "tag": "SOP 1 • Public Profile",
+      "question": "What are the key demographic and usage statistics of the 364 Public Users (SOP 1)?",
+      "answer": "• Programs (10 total): BSHM 18.13% (66), BSIE 12.64% (46), BSIT 12.36% (45).\n• Year Levels: 1st-year 35.44% (129), 3rd-year 26.65% (97), 2nd-year 25.00% (91).\n• Access: 65.66% (239) used smartphones; 66.21% (241) used Google Chrome → validates PWA mobile-first design.\n• Usage: 71.70% (261) used EcoStep once during evaluation; 100.00% (364) used the EcoGuide chatbot.",
+      "keyFacts": [
+        "Top programs: BSHM 18.13%, BSIE 12.64%, BSIT 12.36%",
+        "65.66% smartphone, 66.21% Chrome",
+        "71.70% single-use; 100% tried EcoGuide"
+      ]
+    },
+    {
+      "id": "fin1-p2",
+      "deckId": "tech-findings",
+      "sourceType": "paper",
+      "tag": "SOP 1 • Admin Profile",
+      "question": "What are the key profile and feature usage statistics of the 20 System Administrators (SOP 1)?",
+      "answer": "• Roles in CODETech: 40.00% executive officers, 35.00% media/documentation personnel.\n• Prior Experience: 100.00% had prior dashboard/IoT experience (85.00% some, 15.00% extensive).\n• Feature Usage: 100.00% used Historical Records, 95.00% used Reports & Export, only 25% (5/20) used Live Monitoring, and only 15.00% (3/20) used Hardware Diagnostics.",
+      "keyFacts": [
+        "40% execs, 35% media/doc",
+        "100% prior exp & historical records",
+        "95% reports/export",
+        "Only 15% (3/20) used diagnostics"
+      ]
+    },
+    {
+      "id": "fin1-p3",
+      "deckId": "tech-findings",
+      "sourceType": "paper",
+      "tag": "SOP 2.1 • MAPE",
+      "question": "What were the exact Energy Measurement Accuracy (SOP 2.1) results across the 6 bench trials?",
+      "answer": "Across 6 physical footstep trials (38.0 kg to 70.0 kg) vs. calibrated digital multimeter:\n• Voltage MAPE = 8.05% (Mean |Error| = 0.19 V) — PASSED (< 10.00%).\n• Power MAPE = 8.46% (Mean |Error| = 0.057 mW) — PASSED (< 10.00%).\n• 5 of 6 trials were < 9% (V) and < 6.5% (P); Trial 3 (42.0 kg) was the sole outlier (16.67% V, 23.87% P).",
+      "keyFacts": [
+        "Voltage MAPE: 8.05% (< 10%)",
+        "Power MAPE: 8.46% (< 10%)",
+        "6 trials: 38.0–70.0 kg",
+        "Trial 3 (42 kg) = outlier"
+      ]
+    },
+    {
+      "id": "fin1-p4",
+      "deckId": "tech-findings",
+      "sourceType": "paper",
+      "tag": "SOP 2.2 • Ingestion",
+      "question": "What were the exact Data Transmission Reliability (SOP 2.2) verification results?",
+      "answer": "Tested live on Nov 21, 2026 via Postman to POST https://api.cebutech.digital/api/iot/readings with X-API-Key:\n• Payload: 5.2 V, 0.15 A, 0.78 W, 0.002 mWh.\n• Result: 100.00% accepted (target ≥ 95.00%), HTTP 201 Created, persisted to MongoDB Atlas.\n• Latency: 295.00 ms total (TTFB 271.73 ms, SSL 12.44 ms, DNS 8.36 ms) — PASSED (< 500 ms).",
+      "keyFacts": [
+        "100.00% ingestion success",
+        "HTTP 201 Created in 295.00 ms",
+        "TTFB: 271.73 ms"
+      ]
+    },
+    {
+      "id": "fin1-p5",
+      "deckId": "tech-findings",
+      "sourceType": "paper",
+      "tag": "SOP 2.3 & 2.4 • Latency",
+      "question": "What were the exact Data Storage/Retrieval (SOP 2.3) and Presentation Timeliness (SOP 2.4) results?",
+      "answer": "Across 9 live Postman HTTPS trials (1 POST + 8 GET across 5 endpoints):\n• Mean Latency: 282.11 ms (0.28 s), range 260.00–310.00 ms — PASSED (< 500 ms retrieval & ≤ 3.00 s presentation targets).\n• Database Integrity: All 5 checks (DB-01 to DB-05) PASSED.\n• Cross-Endpoint Parity: 100.00% match (0.00% error) — 5.2 V, 0.15 A, 0.78 W; 5 daily readings × 0.78 W = 3.90 W cumulative daily power (23 total readings).",
+      "keyFacts": [
+        "9-trial mean: 282.11 ms (260–310 ms)",
+        "Target: < 500 ms & ≤ 3.00 s",
+        "100% parity: 5 × 0.78 W = 3.90 W"
+      ]
+    },
+    {
+      "id": "fin1-p6",
+      "deckId": "tech-findings",
+      "sourceType": "paper",
+      "tag": "SOP 2.5 • Trigger Weight",
+      "question": "What were the exact Minimum Triggering Weight (SOP 2.5) results across all four load bands?",
+      "answer": "Tested physically on Nov 5, 2026 (F = m × 9.81 m/s²):\n• 1–5 kg (9.81–49.05 N): Small signal (~1 V, 2.2 mW) detected, NOT counted as a step (filtered as noise).\n• 15–20 kg (147.15–196.20 N): FIRST counted step (~5 V, 55 mW).\n• 45–55 kg: Counted step (~10 V, 220 mW).\n• 65–80+ kg: Counted step (~20–30 V, 680 mW; capped by Zener & foam/casing stop).",
+      "keyFacts": [
+        "1–5 kg: noise filtered (~1V, 2.2mW)",
+        "15–20 kg: first step trigger (~5V, 55mW)",
+        "45–55 kg: ~10V, 220mW",
+        "65–80+ kg: ~20–30V, 680mW"
+      ]
+    },
+    {
+      "id": "def-q39",
+      "deckId": "tech-findings",
+      "sourceType": "defense",
+      "tag": "Defense Q39",
+      "question": "In SOP 2.1, Trial 3 (42 kg) had a 16.67% voltage error and 23.87% power error—way above your 10% benchmark. Why did you still mark accuracy as \"Passed\"?",
+      "answer": "Our accuracy benchmark is based on the overall Mean Absolute Percentage Error (MAPE) across all six trials, which came out to 8.05% for voltage and 8.46% for power—both under 10%. Five of the six trials were well below 9% for voltage and 6.5% for power. We reported Trial 3 transparently and traced it to a brief peak-capture timing difference between the multimeter and the ESP32 ADC.",
+      "keyFacts": [
+        "Benchmark is overall MAPE (8.05% V, 8.46% P)",
+        "5/6 trials well below 9% V & 6.5% P",
+        "Trial 3 = transient peak-capture timing mismatch"
+      ]
+    },
+    {
+      "id": "def-q40",
+      "deckId": "tech-findings",
+      "sourceType": "defense",
+      "tag": "Defense Q40",
+      "question": "Your hardware accuracy test only used 6 trials, and your live Postman API test only used 9 requests (1 POST, 8 GET). Is that sample size large enough to prove reliability?",
+      "answer": "Those trials were controlled verification runs designed to confirm end-to-end accuracy, persistence, and latency under live internet conditions—not high-load enterprise stress tests. We explicitly documented this sample size as a methodological limitation in Chapter 2 and recommended multi-week longitudinal testing and load caching in Chapter 3.",
+      "keyFacts": [
+        "Controlled end-to-end verification runs",
+        "Explicitly documented as limitation in Ch. 2",
+        "Longitudinal & load testing recommended in Ch. 3"
+      ]
+    },
+    {
+      "id": "def-q41",
+      "deckId": "tech-findings",
+      "sourceType": "defense",
+      "tag": "Defense Q41",
+      "question": "In SOP 2.5 (Minimum Triggering Weight), you tested 1–5 kg and then jumped straight to 15–20 kg. Why didn't you test between 5 kg and 15 kg to find the exact trigger weight?",
+      "answer": "We tested using four grouped mass bands (1–5 kg, 15–20 kg, 45–55 kg, and 65–80+ kg) to separate light taps from valid footsteps and typical adult weights. Because 15–20 kg is already less than half of an average adult's weight, it confirmed reliable footstep triggering. We openly noted the untested 5–15 kg gap and recommended finer incremental calibration in Chapter 3.",
+      "keyFacts": [
+        "4 grouped mass bands tested",
+        "15–20 kg < half average adult weight",
+        "5–15 kg gap noted & recommended for Ch. 3"
+      ]
+    },
+    {
+      "id": "fin2-p1",
+      "deckId": "eval-conclusions",
+      "sourceType": "paper",
+      "tag": "SOP 3 • Public ISO 25010",
+      "question": "What were the exact ISO/IEC 25010 Acceptability scores from the 364 Public Users (Table 33)?",
+      "answer": "Overall Weighted Mean: x̄ = 4.29 (SD = 0.20) — Strongly Agree (Very High Acceptability).\n• Functional Suitability: 4.32 (SD 0.24) — Strongly Agree (Highest)\n• Performance Efficiency: 4.30 (SD 0.33) — Strongly Agree\n• Usability: 4.29 (SD 0.37) — Strongly Agree\n• Reliability: 4.27 (SD 0.37) — Strongly Agree\nTop individual items: Dashboard↔Chatbot navigation (4.66), Dashboard availability (4.65), EcoGuide speed (4.65), EcoGuide relevance (4.63).",
+      "keyFacts": [
+        "Overall: 4.29 (SD 0.20) Strongly Agree",
+        "Func 4.32 | Perf 4.30 | Usab 4.29 | Rel 4.27",
+        "Top item: Navigation 4.66"
+      ]
+    },
+    {
+      "id": "fin2-p2",
+      "deckId": "eval-conclusions",
+      "sourceType": "paper",
+      "tag": "SOP 3 • Admin ISO 25010",
+      "question": "What were the exact ISO/IEC 25010 Acceptability scores from the 20 System Administrators (Table 34)?",
+      "answer": "Overall Weighted Mean: x̄ = 4.05 (SD = 0.55) — Agree (High Acceptability).\n• Functional Suitability: 4.28 (SD 0.61) — Strongly Agree (Highest; milestones = 4.40)\n• Usability: 4.13 (SD 0.72) — Agree\n• Reliability: 4.00 (SD 0.65) — Agree (lowest item: DB completeness 3.80)\n• Performance Efficiency: 3.95 (SD 0.67) — Agree (lowest item: historical queries/reports 3.85)\n• Security: 3.82 (SD 0.78) — Agree (Lowest; role actions 3.75, audit traceability 3.80, SD 1.15).",
+      "keyFacts": [
+        "Overall: 4.05 (SD 0.55) Agree",
+        "Func 4.28 | Usab 4.13 | Rel 4.00 | Perf 3.95 | Sec 3.82",
+        "Lowest: Security 3.82"
+      ]
+    },
+    {
+      "id": "fin2-p3",
+      "deckId": "eval-conclusions",
+      "sourceType": "paper",
+      "tag": "SOP 4 • Usefulness",
+      "question": "What were the exact Perceived Usefulness scores (SOP 4) for both System Administrators and Public Users?",
+      "answer": "System Administrators (n = 20, Table 35): Overall x̄ = 4.23 (SD = 0.55, Strongly Agree).\n• Admin Dashboard Usefulness: 4.29 (improves org management = 4.45)\n• Milestone Feature: 4.20 | Intention to Use: 4.10\n\nPublic Users (N = 364, Table 36): Overall x̄ = 4.31 (SD = 0.22, Strongly Agree).\n• Intention to Use: 4.38 (recommend = 4.49)\n• Dashboard & EcoGuide Utility: 4.35 (EcoGuide quick answers = 4.74 — HIGHEST ITEM IN ENTIRE STUDY!)\n• Milestone Feature: 4.30 (meaningful totals = 4.63) | Learning/Awareness: 4.19",
+      "keyFacts": [
+        "Admins: 4.23 (SD 0.55) Strongly Agree",
+        "Public: 4.31 (SD 0.22) Strongly Agree",
+        "Highest item in study: EcoGuide quick answers (4.74)"
+      ]
+    },
+    {
+      "id": "fin2-p4",
+      "deckId": "eval-conclusions",
+      "sourceType": "paper",
+      "tag": "SOP 5 • t-Tests",
+      "question": "What were the exact One-Sample t-Test results (SOP 5, Table 37) against the neutral midpoint (μ₀ = 3.00)?",
+      "answer": "• System Administrators (n = 20): x̄ = 4.23, SD = 0.55, Mean Diff = +1.23, df = 19, t = 10.00, p = 2.62 × 10⁻⁹ (< 0.001) → REJECT H₀1 (Significant).\n• Public Users (N = 364): x̄ = 4.31, SD = 0.22, Mean Diff = +1.31, df = 363, t = 114.17, p < 0.001 (< 10⁻¹⁶) → REJECT H₀2 (Significant).\n\nBoth groups rated EcoStep's usefulness decisively above neutral at α = 0.05.",
+      "keyFacts": [
+        "Admins: t(19) = 10.00, p = 2.62×10⁻⁹ → Reject H₀1",
+        "Public: t(363) = 114.17, p < 0.001 → Reject H₀2",
+        "MD: +1.23 (Admins), +1.31 (Public)"
+      ]
+    },
+    {
+      "id": "fin2-p5",
+      "deckId": "eval-conclusions",
+      "sourceType": "paper",
+      "tag": "SOP 6 • Challenges",
+      "question": "Summarize the top qualitative challenges reported in SOP 6 (Table 38) by Public Users and System Administrators.",
+      "answer": "Public Users (116 coded entries = 82 substantive + 34 \"N/A\"):\n1) Initial page load on free tier: f = 34 (9.34%)\n2) Out-of-scope EcoGuide answers: f = 23 (6.32%) — FIXED\n3) Delayed real-time reflection: f = 8 (2.20%) — FIXED\n4) Analytics refresh crash: f = 7 (1.92%) — FIXED\n5) Mobile UI glitches: f = 4 (1.10%) — FIXED\n6) Multilingual EcoGuide request: f = 4 (1.10%) — Future work\n\nSystem Administrators (11 coded entries):\n1) Confusing hardware diagnostics UI: f = 5 (25.00%) — Scheduled\n2) Redundant milestone settings: f = 3 (15.00%) — FIXED\n3) Suboptimal report export layout: f = 3 (15.00%) — IMPROVED",
+      "keyFacts": [
+        "Public top issue: Cold-start load (34, 9.34%)",
+        "EcoGuide out-of-scope (23) — fixed",
+        "Admin top issue: Confusing diagnostics (5, 25%)"
+      ]
+    },
+    {
+      "id": "fin2-p6",
+      "deckId": "eval-conclusions",
+      "sourceType": "paper",
+      "tag": "Chapter 3 • Recs",
+      "question": "What are the six (6) actionable Recommendations presented in Chapter 3?",
+      "answer": "1) Query Caching & Report Export Optimization (sync-status indicators, server caching, async PDF/Excel queue).\n2) Cloud Hosting & Cold-Start Mitigation (always-on tier or scheduled keep-alive pings during campus hours).\n3) Administrative Diagnostics & Audit Visibility Enhancement (guided diagnostics UI + personal admin activity logs).\n4) EcoGuide Multilingual Expansion (Cebuano & Filipino alongside English).\n5) Finer Step-Threshold Calibration (5–15 kg increments) & Multi-Tile Scaling.\n6) Longitudinal Campus Evaluation & Super Administrator Audit Completion.",
+      "keyFacts": [
+        "1. Caching & async exports",
+        "2. Keep-alive / always-on host",
+        "3. Diagnostics UX + personal audit logs",
+        "4. Cebuano/Filipino EcoGuide",
+        "5. 5–15 kg test + multi-tile",
+        "6. Multi-week longitudinal study"
+      ]
+    },
+    {
+      "id": "def-q42",
+      "deckId": "eval-conclusions",
+      "sourceType": "defense",
+      "tag": "Defense Q42",
+      "question": "System Administrators rated Security lowest (3.82) and Performance Efficiency second lowest (3.95). Does that mean your system is insecure and slow?",
+      "answer": "No—both scores still fall in the \"Agree\" (High Acceptability) range, well above neutral. Security scored 3.82 mainly because our protections (JWT, bcrypt, RBAC, and Super-Admin-only audit logs) run invisibly in the backend, so regular admins could not see their own activity logs. Performance Efficiency (3.95) reflects multi-user concurrency and PDF/Excel generation overhead on free-tier hosting, even though single API calls averaged 282.11 ms.",
+      "keyFacts": [
+        "Both still \"Agree\" (High Acceptability)",
+        "Security controls run invisibly in backend",
+        "Perf reflects concurrency & PDF/Excel overhead"
+      ]
+    },
+    {
+      "id": "def-q43",
+      "deckId": "eval-conclusions",
+      "sourceType": "defense",
+      "tag": "Defense Q43",
+      "question": "Only 3 out of 20 System Administrators (15%) used the Hardware Diagnostics feature, and 25% said it was confusing. Did that module fail?",
+      "answer": "Functionally, the diagnostics module passed all unit, integration, and alpha tests. However, from a UX standpoint, the layout was not intuitive enough for quick adoption. Our triangulation caught this exact link between the 15% usage and 25% confusion feedback, which is why redesigning the diagnostics UI with guided indicators is one of our top recommendations.",
+      "keyFacts": [
+        "Passed all functional/unit/alpha tests",
+        "UX adoption issue, not functional failure",
+        "Caught by Diagnostic Convergence triangulation"
+      ]
+    },
+    {
+      "id": "def-q44",
+      "deckId": "eval-conclusions",
+      "sourceType": "defense",
+      "tag": "Defense Q44",
+      "question": "71.70% of Public Users only used EcoStep once during evaluation. How can you conclude that it improves long-term sustainability awareness?",
+      "answer": "We are careful not to claim proven long-term behavioral change. Our findings show strong immediate comprehension (4.20) and willingness to reuse and recommend EcoStep (4.38–4.49) after initial use. That is why we listed single-session exposure as a limitation and recommended a multi-week longitudinal study for future researchers.",
+      "keyFacts": [
+        "No claim of proven long-term behavior change",
+        "Shows immediate comprehension (4.20) & reuse intent (4.38–4.49)",
+        "Multi-week longitudinal study recommended"
+      ]
+    },
+    {
+      "id": "def-q45",
+      "deckId": "eval-conclusions",
+      "sourceType": "defense",
+      "tag": "Defense Q45",
+      "question": "In SOP 5, your Public User t-value is 114.17. Why is it so unusually high?",
+      "answer": "The t-statistic divides the mean difference (+1.31 above 3.00) by the standard error (SD divided by the square root of N). Because our sample size was large (N = 364) and responses were very consistent (SD = 0.22), the standard error became tiny (~0.0115), which naturally produced a large t-value. As we noted in Chapter 2, the +1.31 mean difference is the more practical indicator of the effect size.",
+      "keyFacts": [
+        "t = +1.31 / (0.22 / √364) ≈ 114.17",
+        "Large N (364) + tight SD (0.22) = tiny SE",
+        "+1.31 MD is the practical effect size"
+      ]
+    },
+    {
+      "id": "def-q46",
+      "deckId": "eval-conclusions",
+      "sourceType": "defense",
+      "tag": "Defense Q46",
+      "question": "Which bugs reported in SOP 6 did you actually fix, and which ones are still unfixed?",
+      "answer": "Fixed during iterative deployment: (1) out-of-scope EcoGuide replies (strict domain guardrails), (2) delayed real-time updates (ESP32 firmware adjustment), (3) analytics refresh crashes (React state fix), (4) mobile UI glitches, (5) redundant admin milestone settings, and (6) report export formatting.\n\nScheduled for future work (3 items): eliminating free-tier cold starts, redesigning hardware diagnostics UI, and adding Cebuano/Filipino language support to EcoGuide.",
+      "keyFacts": [
+        "6 items fixed/improved during deployment",
+        "3 future items: cold starts, diagnostics UX, Cebuano/Filipino AI"
+      ]
+    }
+  ]
+}

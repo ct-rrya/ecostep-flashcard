@@ -2,8 +2,10 @@ services:
   - type: web
     name: ecostep-defense-flashcards
     runtime: node
-    buildCommand: npm install && npm run build
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm start
+    healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
